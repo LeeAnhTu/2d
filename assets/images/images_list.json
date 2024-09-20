@@ -1,0 +1,128 @@
+{
+  "Table": [
+    {
+      "fileName": "table1.png",
+      "alternateFileName": "table3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "table2.png",
+      "alternateFileName": "table3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    }
+  ],
+  "Chair": [
+    {
+      "fileName": "chair1.png",
+      "alternateFileName": "chair1a.png",
+      "alternateHeight": 40,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "chair2.png",
+      "alternateFileName": "chair2a.png",
+      "alternateHeight": 40,
+      "alternateWidth":60
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    },
+    {
+      "fileName": "chair3.png",
+      "alternateFileName": "chair3a.png",
+      "alternateHeight": 50,
+      "alternateWidth":50
+    }
+  ],
+  "Tree": [
+    {
+      "fileName": "tree1.png",
+      "alternateFileName": "tree3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "tree2.png",
+      "alternateFileName": "tree3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    }
+  ],
+  "Door": [
+    {
+      "fileName": "door1.png",
+      "alternateFileName": "door3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "door2.png",
+      "alternateFileName": "door3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    }
+  ],
+  "Window": [
+    {
+      "fileName": "window1.png",
+      "alternateFileName": "window3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "window2.png",
+      "alternateFileName": "window3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    }
+  ],
+  "Bed": [
+    {
+      "fileName": "bed1.png",
+      "alternateFileName": "bed3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "bed2.png",
+      "alternateFileName": "bed3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    }
+  ]
+}
