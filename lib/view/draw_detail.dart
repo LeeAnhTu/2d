@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../components/DesignStorage.dart';
+import '../components/design.dart';
 import '../components/draggable_image.dart'; // Import đúng cách
 import '../components/icon_buttons.dart';
 import '../components/select_room.dart';
@@ -17,13 +20,41 @@ class DrawDetail extends StatefulWidget {
 class _DrawDetailState extends State<DrawDetail> {
   Map<String, List<ImageDetails>>? imagesMap;
   List<DraggableImage> draggableImages = [];
-
+  String selectedRoomType = 'rectangle'; // 'rectangle' hoặc 'square'
+  double roomWidth = 0.0; // Thay thế cho 'width'
+  double roomHeight = 0.0; // Thay thế cho 'height'
   @override
   void initState() {
     super.initState();
     loadImagesMap();
   }
+  Future<void> saveDesign() async {
+    final prefs = await SharedPreferences.getInstance();
+    final design = Design(
+      name: 'MyDesign', // Bạn có thể thêm input để người dùng nhập tên
+      draggableImages: draggableImages,
+      width: roomWidth,
+      height: roomHeight,
+      roomType: selectedRoomType,
+    );
+    final jsonString = jsonEncode(design.toJson());
+    await prefs.setString('savedDesign', jsonString);
+  }
 
+  Future<void> loadDesign() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString('savedDesign');
+    if (jsonString != null) {
+      final designJson = jsonDecode(jsonString);
+      final design = Design.fromJson(designJson);
+      setState(() {
+        draggableImages = design.draggableImages;
+        roomWidth = design.width;
+        roomHeight = design.height;
+        selectedRoomType = design.roomType;
+      });
+    }
+  }
   Future<void> loadImagesMap() async {
     // Load file JSON từ assets
     String jsonString = await rootBundle.loadString('assets/images/images_list.json');
@@ -120,6 +151,94 @@ class _DrawDetailState extends State<DrawDetail> {
     });
   }
 
+  void _saveDesign() async {
+    String? designName = await _showNameInputDialog();
+    if (designName != null && designName.isNotEmpty) {
+      final design = Design(
+        name: designName,
+        draggableImages: draggableImages,
+        width: roomWidth,
+        height: roomHeight,
+        roomType: selectedRoomType,
+      );
+      await DesignStorage.saveDesign(design);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Design saved successfully')),
+      );
+    }
+  }
+
+  void _loadDesign() async {
+    List<Design> savedDesigns = await DesignStorage.loadDesigns();
+    if (savedDesigns.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('No saved designs')),
+      );
+      return;
+    }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Select a design'),
+          content: Container(
+            width: double.maxFinite,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: savedDesigns.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(savedDesigns[index].name),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    _applyDesign(savedDesigns[index]);
+                  },
+                );
+              },
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _applyDesign(Design design) {
+    setState(() {
+      draggableImages = design.draggableImages;
+      roomWidth = design.width;
+      roomHeight = design.height;
+      selectedRoomType = design.roomType;
+    });
+  }
+  Future<String?> _showNameInputDialog() async {
+    String? designName;
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Enter design name'),
+          content: TextField(
+            onChanged: (value) {
+              designName = value;
+            },
+            decoration: InputDecoration(hintText: "Design name"),
+          ),
+          actions: [
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            TextButton(
+              child: Text('Save'),
+              onPressed: () => Navigator.of(context).pop(designName),
+            ),
+          ],
+        );
+      },
+    );
+    return designName;
+  }
 
 
   @override
@@ -127,6 +246,16 @@ class _DrawDetailState extends State<DrawDetail> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Draw2D'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: _saveDesign,
+          ),
+          IconButton(
+            icon: Icon(Icons.folder_open),
+            onPressed: _loadDesign,
+          ),
+        ],
       ),
       body: Stack(
         children: [
@@ -136,6 +265,7 @@ class _DrawDetailState extends State<DrawDetail> {
             ),
           ),
         ],
+
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),

@@ -2,13 +2,31 @@
   "Table": [
     {
       "fileName": "table1.png",
-      "alternateFileName": "table3.png",
+      "alternateFileName": "table1a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     },
     {
       "fileName": "table2.png",
-      "alternateFileName": "table3.png",
+      "alternateFileName": "table2a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "table3.png",
+      "alternateFileName": "table3a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "table4.png",
+      "alternateFileName": "table4a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "table5.png",
+      "alternateFileName": "table5a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     }
@@ -33,38 +51,20 @@
       "alternateWidth":50
     },
     {
-      "fileName": "chair3.png",
-      "alternateFileName": "chair3a.png",
+      "fileName": "chair4.png",
+      "alternateFileName": "chair4a.png",
       "alternateHeight": 50,
       "alternateWidth":50
     },
     {
-      "fileName": "chair3.png",
-      "alternateFileName": "chair3a.png",
+      "fileName": "chair5.png",
+      "alternateFileName": "chair5a.png",
       "alternateHeight": 50,
       "alternateWidth":50
     },
     {
-      "fileName": "chair3.png",
-      "alternateFileName": "chair3a.png",
-      "alternateHeight": 50,
-      "alternateWidth":50
-    },
-    {
-      "fileName": "chair3.png",
-      "alternateFileName": "chair3a.png",
-      "alternateHeight": 50,
-      "alternateWidth":50
-    },
-    {
-      "fileName": "chair3.png",
-      "alternateFileName": "chair3a.png",
-      "alternateHeight": 50,
-      "alternateWidth":50
-    },
-    {
-      "fileName": "chair3.png",
-      "alternateFileName": "chair3a.png",
+      "fileName": "chair6.png",
+      "alternateFileName": "chair6a.png",
       "alternateHeight": 50,
       "alternateWidth":50
     }
@@ -72,13 +72,13 @@
   "Tree": [
     {
       "fileName": "tree1.png",
-      "alternateFileName": "tree3.png",
+      "alternateFileName": "tree1a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     },
     {
       "fileName": "tree2.png",
-      "alternateFileName": "tree3.png",
+      "alternateFileName": "tree2a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     }
@@ -86,16 +86,35 @@
   "Door": [
     {
       "fileName": "door1.png",
-      "alternateFileName": "door3.png",
+      "alternateFileName": "door1a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     },
     {
       "fileName": "door2.png",
-      "alternateFileName": "door3.png",
+      "alternateFileName": "door2a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "door3.png",
+      "alternateFileName": "door3a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "door4.png",
+      "alternateFileName": "door4a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "door5.png",
+      "alternateFileName": "door5a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     }
+
   ],
   "Window": [
     {
@@ -107,6 +126,30 @@
     {
       "fileName": "window2.png",
       "alternateFileName": "window3.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "window3.png",
+      "alternateFileName": "window3a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "window4.png",
+      "alternateFileName": "window4a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "window5.png",
+      "alternateFileName": "window5a.png",
+      "alternateHeight": 60,
+      "alternateWidth":40
+    },
+    {
+      "fileName": "window6.png",
+      "alternateFileName": "window6a.png",
       "alternateHeight": 60,
       "alternateWidth":40
     }

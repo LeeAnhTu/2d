@@ -17,8 +17,8 @@ class _SelectRoomState extends State<SelectRoom> {
   double roomHeight = 0.0; // Chiều cao mặc định
   double area = 0.0; // Diện tích phòng
 
-  Color wallColor = Colors.grey[400]!; // Màu tường xám
-  Color floorColor = Colors.brown[300]!; // Màu sàn gỗ
+  Color wallColor = Color(0xFFB8B8B8)!; // Màu tường xám
+  Color floorColor = Color(0xFFFFE2AB)!; // Màu sàn gỗ
   Color lineColor = Colors.white; // Màu đường line
   double wallThickness = 8.0; // Độ dày của tường
   double lineThickness = 2.0; // Độ dày của đường line
@@ -96,6 +96,7 @@ class _SelectRoomState extends State<SelectRoom> {
         ),
       ),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           // Đường line trắng ở giữa tường
           Positioned(
@@ -161,6 +162,7 @@ class _SelectRoomState extends State<SelectRoom> {
               ),
             );
           }).toList(),
+
         ],
       ),
     );
